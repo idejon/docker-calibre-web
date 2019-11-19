@@ -24,9 +24,9 @@ resource "azurerm_app_service_plan" "appserviceplan" {
     size = "S1"
   }
 
-  properties {
+    
     reserved = true # Mandatory for Linux plans
-  }
+  
 }
 
 # Create an Azure Web App for Containers in that App Service Plan
@@ -37,7 +37,7 @@ resource "azurerm_app_service" "dockerapp" {
   app_service_plan_id = "${azurerm_app_service_plan.appserviceplan.id}"
 
   # Do not attach Storage by default
-  app_settings {
+  app_settings = {
     WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
 
     /*
