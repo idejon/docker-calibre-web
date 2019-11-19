@@ -24,9 +24,9 @@ resource "azurerm_app_service_plan" "appserviceplan" {
     size = "S1"
   }
 
-  properties  {
+    
     reserved = true # Mandatory for Linux plans
-  }
+  
 }
 
 # Create an Azure Web App for Containers in that App Service Plan
