@@ -41,6 +41,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+          'latest'
     - task: PowerShell@2
       displayName: 'Get-ChildItem PowerShell'
       inputs:
