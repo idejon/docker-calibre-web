@@ -41,3 +41,8 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: PowerShell@2
+      displayName: 'Get-ChildItem PowerShell'
+      inputs:
+        targetType: 'inline'
+        script: 'Get-ChildItem -Path $(System.DefaultWorkingDirectory) -Recurse -Force'
