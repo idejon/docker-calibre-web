@@ -27,12 +27,7 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-    - task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: 'Get-ChildItem -Path $(System.DefaultWorkingDirectory) -Recurse -Force'
-    
-  - task: Docker@2
+    - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
         command: buildAndPush
