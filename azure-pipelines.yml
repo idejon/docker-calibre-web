@@ -46,3 +46,14 @@ stages:
       inputs:
         targetType: 'inline'
         script: 'Get-ChildItem -Path $(System.DefaultWorkingDirectory) -Recurse -Force'
+    - task: CopyFiles@2
+      displayName: 'Copy Files to $(Build.ArtifactStagingDirectory)'
+      inputs:
+        SourceFolder: '$(System.DefaultWorkingDirectory)/terraform'
+        Contents: '**/**'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
