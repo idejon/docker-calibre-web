@@ -41,13 +41,13 @@ resource "azurerm_app_service" "dockerapp" {
     WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
 
     
-    /* # Settings for private Container Registires  
+    # Settings for private Container Registires  
     "DOCKER_REGISTRY_SERVER_URL"      = "#{DOCKER_REGISTRY_SERVER_URL}#"
     "DOCKER_REGISTRY_SERVER_USERNAME" = "#{DOCKER_REGISTRY_SERVER_USERNAME}#"
     "DOCKER_REGISTRY_SERVER_PASSWORD" = "#{DOCKER_REGISTRY_SERVER_PASSWORD}#"
 
     #Calibre Settings
-    "WEBSITES_PORT" = "8083" */
+    "WEBSITES_PORT" = "8083"
     
   }
   # Configure Docker Image to load on start
