@@ -52,7 +52,7 @@ resource "azurerm_app_service" "dockerapp" {
   }
   # Configure Docker Image to load on start
   site_config {
-    linux_fx_version = "DOCKER|${DOCKER_REGISTRY_SERVER_URL}/idejondockercalibreweb:latest"
+    linux_fx_version = "DOCKER|#{DOCKER_REGISTRY_SERVER_URL}#/idejondockercalibreweb:latest"
     always_on        = "true"
   }
 
