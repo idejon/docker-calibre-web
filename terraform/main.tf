@@ -38,7 +38,7 @@ resource "azurerm_app_service" "dockerapp" {
 
   # Do not attach Storage by default
   app_settings = {
-    WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
+    WEBSITES_ENABLE_APP_SERVICE_STORAGE = true
 
     
     # Settings for private Container Registires  
